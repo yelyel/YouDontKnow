@@ -12,16 +12,15 @@ var a = 15;
 function yel(a) {
   console.log( a );
   if (a == 15) {
-    
+
     var a = 13;
     }
-  
+
   console.log( "nach if & in yel : " + a );
 }
 
 yel();
 console.log( a );
-
 //  wieso funktioniert das oben  nicht ????
 
 foo(); // "b"
@@ -34,9 +33,3 @@ if (a) {
 else {
   function foo() { console.log( "b" ); }
 }
-
-
-/*
-Exception: TypeError: foo is not a function
-@Scratchpad/1:27:1
-*/

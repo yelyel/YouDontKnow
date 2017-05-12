@@ -6,9 +6,9 @@ var adder = function (total) {
     total += summand;
     alert(total);
   }
- 
+
   return inner_function;
- 
+
 }(0); // <- we call the annonymous function
       //    and assign the returned function to adder
 
