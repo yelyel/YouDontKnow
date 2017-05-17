@@ -10,7 +10,7 @@
 var a = 15;
 
 function yel(a) {
-  console.log( a );
+  console.log( a + " Zeile 13");
   if (a == 15) {
 
     var a = 13;
@@ -21,15 +21,25 @@ function yel(a) {
 
 yel();
 console.log( a );
-//  wieso funktioniert das oben  nicht ????
+//  wieso funktioniert das bis hier nicht ????
 
-foo(); // "b"
+function foo() {
+  var a;
+  var b;
+  a = 2;
+  console.log( a ); // 2
+  console.log( b ); // undefined
+  b = 2;
+}
+foo(); // "undefined"
 
-var a = true;
-if (a) {
-  function foo() { console.log( "a" ); }
+// wieso funktioniert die if Schlaufe hier nicht ?? ????
+var c = true;
+console.log( c );
+if ( c ) {
+  function foox() { console.log( c ); }
 
 }
 else {
-  function foo() { console.log( "b" ); }
+  function foox() { console.log( "d" ); }
 }
