@@ -1,3 +1,4 @@
+
 var b = 10;
 
 
@@ -45,3 +46,63 @@ function turnaround(t) {
 }
 
 turnaround(100);
+
+function yel() {
+  var some = "Yel !!!!!";
+  console.log(some);
+}
+
+yel();
+
+function foo3() {
+  var something = "cool";
+  var another = [1, 2, 3];
+  function doSomething() {
+    console.log( something );
+  }
+  //doSomething();
+
+  //doAnother();
+  return {
+      doSomething: doSomething,
+      doAnother: function doAnother() {
+        console.log( another.join( " ! " ) );
+      }
+  };
+}
+//foo3();
+var foo4 = foo3();
+foo3().doSomething();  //beide Varianten funktionieren !!!
+foo4.doAnother();
+
+
+
+
+var fooMod = (function CoolModule(id) {
+  function change() {
+    // modifying the public API
+    publicAPI.identify = identify2;
+  }
+  function unChange() {
+    // modifying the public API
+    publicAPI.identify = identify1;
+  }
+  function identify1() {
+    console.log( id );
+  }
+  function identify2() {
+    console.log( id.toUpperCase() );
+  }
+  var publicAPI = {
+    change: change,
+    unChange: unChange,
+    identify: identify1
+  };
+  return publicAPI;
+})( "Yel ist gut !!!" );
+fooMod.identify();
+fooMod.unChange(); // foo module
+fooMod.change();
+fooMod.identify(); // FOO MODULE
+fooMod.unChange();
+fooMod.identify(); // foo module
