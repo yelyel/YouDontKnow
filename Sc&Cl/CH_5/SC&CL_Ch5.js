@@ -31,3 +31,17 @@ function bar2() {
 
 foo2();
 bar2();
+
+function turnaround(t) {
+  var i = 0;
+  for ( i=1; i<=5; i++) {
+    (function(){
+      var j = i;
+      setTimeout( function timer(){
+        console.log( j );
+      }, j*t );
+    })();
+  }
+}
+
+turnaround(100);
