@@ -150,3 +150,107 @@ arr_2 = arr_2.concat(arr_3);
 console.log(arr_2);   // ["JavaScript", "Python", "Ruby", "Java", "Haskell", "Clojure"];
 
 console.log(arr_2.slice(0,4));
+
+console.log("-----------------");
+
+// Array Iteration
+
+for(var i = 0; i <= 5; i++){
+    console.log(i);
+}
+console.log("----------");
+var decimals = [1.1, 1.6, 2.8, 0.4, 3.5, 1.6];
+/*
+for (var i = 0; i < decimals.length; i++) {
+  decimals[i] = Math.round(decimals[i]);
+  console.log(decimals[i]);
+}
+
+
+var i = 0;
+while (i < decimals.length) {
+  decimals[i] = Math.round(decimals[i]);
+  console.log(decimals[i]);
+  i++;
+
+}
+*/
+var i = 0;
+do {
+  decimals[i] = Math.round(decimals[i]);
+  console.log(decimals[i]);
+  i++;
+} while (i < decimals.length )
+
+
+
+for(var i = 0; i<5; i++){
+    num = Math.random();
+    if(num > 0.5){
+        console.log(num);
+        console.log("Breaking out of the loop when i is " + i);
+        break;
+    }
+    else {
+        console.log(num);
+        console.log(i);
+    }
+}
+
+var me = "me, myself and I";
+meSplitLetter = me.split("");
+console.log(meSplitLetter);
+meWords = me.split(" ");
+console.log(meWords);
+
+console.log("---------");
+
+
+////// exercises
+var people = ["Greg", "Mary", "Devon", "James"];
+for (var i = 0; i < people.length; i++) {
+  console.log(people[i]);
+}
+
+people.shift();
+
+console.log(people);
+
+people.pop();
+
+console.log(people);
+
+people.unshift("Matt");
+
+console.log(people);
+
+people.push("Yel");
+
+console.log(people);
+
+for (var i = 0; i < 2; i++) {
+  console.log(people[i]);
+}
+
+var lessPeople = people.slice(2);
+console.log(lessPeople);
+
+console.log(people.indexOf("Mary"));
+console.log(people.indexOf("Flo"));
+
+console.log(people);
+
+people = ["Greg", "Mary", "Devon", "James"];
+
+console.log(people);
+
+people.splice(2, 1, "Liz", "Artie");
+
+console.log(people);
+
+var withBob = people.concat("Bob");
+
+console.log(withBob);
+
+
+console.log("-----------------");
