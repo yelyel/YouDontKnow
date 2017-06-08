@@ -45,10 +45,45 @@ function sumTotal() {
 sumTotal(); // 21
 
 console.log("  ");
-console.log("====== countVowels()  NICHT GEMACHT !!!! ======= ");
+console.log("====== countVowels()  GELÖST !!!! ======= ");
 console.log(" ");
 
-//var nestedArr = ['Elie', ['Matt', ['Tim']],['Colt',['Whisky',['Janey'], 'Tom']], 'Lorien'];
+var arr = []
+Array.isArray(arr) // true
+Array.isArray('Hello') // false
+
+var nestedArr = ['Elie', ['Matt', ['Tim']],['Colt',['Whisky',['Janey'], 'Tom']], 'Lorien'];
+
+function countVowels(nest) {
+  var vowels = 0;
+  var vowelString = [];
+  for (var i = 0; i < nest.length; i++) {
+      var nestString = nest[i].toString().toLowerCase();
+      //console.log(nestString);
+      for (var j = 0; j < nestString.length; j++) {
+
+        if (nestString[j] == "a" || nestString[j] == "e" ||  nestString[j] == "i" || nestString[j] == "o" || nestString[j] == "u") {
+          //console.log(nestString[j]);
+          vowelString.push(nestString[j]);
+          vowels++;
+        }
+    }
+  }
+  console.log(vowels);
+  console.log(vowelString);
+}
+
+// console.log(nestedArr[1][1][0]);  // TIM
+// console.log(nestedArr[2][0]);       // Colt
+// console.log(nestedArr[2][1][0]);  // Whisky
+// console.log(nestedArr[2][1][1][0]);  //JAney
+// console.log(nestedArr[2][1][2]);    //Tom
+// console.log(nestedArr[3]);    // Lorien
+
+
+countVowels(nestedArr); // 13
+
+
 
 console.log("  ");
 console.log("====== Nested Arrays Exercises.  ======= ");
@@ -70,21 +105,38 @@ console.log("  ");
 console.log("====== makeXOGrid() ======= ");
 console.log(" ");
 
+// function makeXOGrid(x, y) {
+//   var arr = [];
+//   var row = [];
+//   for (var i = 0; i < x; i++) {
+//     for (var j = 0; j < y; j++) {
+//       if (j % 2 == 0) {
+//         row[j] = "X";
+//       } else {
+//         row[j] = "O";
+//       }
+//     }
+//     arr.push(row);
+//   }
+//   console.log(arr);
+// }
+
+
 function makeXOGrid(x, y) {
-  var arr = [];
-  var row = [];
+  var arr = [[]];
   for (var i = 0; i < x; i++) {
     for (var j = 0; j < y; j++) {
       if (j % 2 == 0) {
-        row[j] = "X";
+        arr[i][j] = "X";
       } else {
-        row[j] = "O";
+        arr[i][j] = "O";
       }
     }
-    arr.push(row);
+    arr.push(arr[i]);
   }
   console.log(arr);
 }
+
 
 makeXOGrid(1,4)
 
@@ -103,6 +155,11 @@ makeXOGrid(3,3)
 [["X","O","X"],["O","X","O"],["X","O","X"]]
 /*/
 
+
+console.log();
 var twoDee = [[]];
 twoDee[0] = [1,2,3];
 console.log(twoDee);
+
+var test = "test";
+console.log(test.toString());
