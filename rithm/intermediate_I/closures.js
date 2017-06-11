@@ -36,9 +36,60 @@ console.log(agePlus());
 console.log(agePlus.age);
 
 
-function defineAge(){
-    var age = 28;
-    return function growUp(){
-        return ++age;
+
+// function defineAge(){
+//     var age = 28;
+//     return function growUp(){
+//         return ++age;
+//     }
+// }
+
+function quickMath() {
+  var a = 5;
+  return {
+    add: function add(b) {
+      return a + b;
+    },
+    multiply: function multiply(b) {
+      return a * b;
     }
+  }
 }
+
+var myMath = quickMath();
+console.log(myMath.add(5));   //10
+console.log(myMath.add(10)); //15
+console.log(myMath.multiply(5));  // 25
+
+var newMath = quickMath().add(10); //10
+console.log(newMath);
+
+var mathModule = (function quickMath() {
+  var a = 5;
+  return {
+    add: function add(b) {
+      return a + b;
+    },
+    multiply: function multiply(b) {
+      return a * b;
+    }
+  }
+})();
+
+console.log(mathModule.add(7));  // 12
+
+var mathModuleRefactored = (function quickMath() {
+  var a = 5;
+  function add(b) {
+    return a + b;
+    }
+  function multiply(b) {
+    return a * b;
+    }
+  return {
+    add: add,
+    multiply: multiply
+  }
+})();
+
+console.log(mathModule.add(17));  // 22
