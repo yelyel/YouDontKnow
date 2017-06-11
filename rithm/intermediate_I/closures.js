@@ -16,17 +16,15 @@ console.log(out(10));
 //var out = outer(11);
 //out(12)
 console.log(out(15));  //24
+
+
 var laterAdd = outer(10);
-
-// we can now call that inner function
-
-
-console.log(laterAdd(15));
+console.log(laterAdd(15));  //25
 
 function newAge(){
    var age = 21;
     return function growUp(){
-        return ++age;
+        return age++;
     }
 }
 var agePlus = newAge();
