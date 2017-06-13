@@ -1,103 +1,3 @@
-function outer(a){
-    return function inner(b){
-        return a + b;
-    }
-}
-
-// var out = outer(9);
-// console.log(out);
-var out = outer(9);
-//out(10);
-console.log(out(10));
-console.log(out(10));
-// out = outer(9)(7);
-//
-// console.log(out);
-//var out = outer(11);
-//out(12)
-console.log(out(15));  //24
-
-
-var laterAdd = outer(10);
-console.log(laterAdd(15));  //25
-
-function newAge(){
-   var age = 21;
-    return function growUp(){
-        return age++;
-    }
-}
-var agePlus = newAge();
-console.log(agePlus());
-console.log(agePlus());
-console.log(agePlus());
-console.log(agePlus);
-console.log(agePlus());
-console.log(agePlus.age);
-
-
-
-// function defineAge(){
-//     var age = 28;
-//     return function growUp(){
-//         return ++age;
-//     }
-// }
-
-function quickMath() {
-  var a = 5;
-  return {
-    add: function add(b) {
-      return a + b;
-    },
-    multiply: function multiply(b) {
-      return a * b;
-    }
-  }
-}
-
-var myMath = quickMath();
-console.log(myMath.add(5));   //10
-console.log(myMath.add(10)); //15
-console.log(myMath.multiply(5));  // 25
-
-var newMath = quickMath().add(10); //10
-console.log(newMath);
-
-var mathModule = (function quickMath() {
-  var a = 5;
-  return {
-    add: function add(b) {
-      return a + b;
-    },
-    multiply: function multiply(b) {
-      return a * b;
-    }
-  }
-})();
-
-console.log(mathModule.add(7));  // 12
-console.log(mathModule.add(17));  // 22
-console.log(mathModule.multiply(17));  //85
-
-
-var mathModuleRefactored = (function() {
-  var a = 5;
-  function add(b) {
-    return a + b;
-    }
-  function multiply(b) {
-    return a * b;
-    }
-  return {
-    add: add,
-    multiply: multiply
-  }
-})();
-console.log(mathModuleRefactored.multiply(17));  //85
-
-
-
 console.log();
 console.log("======   EXERCISES  ========");
 console.log();
@@ -220,3 +120,61 @@ console.log();
 
 console.log(isPrime(49));  // true
 console.log(isPrime(146));  // false
+
+// function numberFact(num, fn) {
+//   return fn(num);
+// }
+
+function numberFact(num, fn){
+  return fn(num);
+}
+console.log();
+console.log(numberFact(49, isEven)); //false
+console.log(numberFact(49, isOdd)); //true
+console.log(numberFact(49, isPrime)); //false
+
+
+function find(arr, fn)  {
+  for (var i = 0; i < arr.length; i++) {
+    if (fn(arr[i]) === true) {
+      return arr[i];
+      //break;
+    }
+  }
+}
+
+console.log();
+console.log(find([8,11,4,27], function(val){return val >= 10})); // 11
+console.log(find([8,11,4,27], function(val){return val === 5})); // undefined
+
+
+function findIndex(arr, fn)  {
+  for (var i = 0; i < arr.length; i++) {
+    if (fn(arr[i]) === true) {
+      return i;
+      //break;
+    }
+  }
+}
+
+console.log();
+console.log(findIndex([8,11,4,27], function(val){return val >= 10})); // 1
+console.log(findIndex([8,11,4,27], function(val){return val === 5})); // undefined
+
+
+function specialMultiply(a,b) {
+  if (arguments.length === 1) {
+    return function(b) {
+    return a * b;
+    }
+  } return a * b;
+}
+console.log();
+console.log(specialMultiply(3,4)); // 12
+console.log(specialMultiply(3)(4)); // 12
+console.log(specialMultiply(3)); // returns a function
+
+
+var multi = specialMultiply(3);
+var multi2 = multi(4);
+console.log(multi2);
