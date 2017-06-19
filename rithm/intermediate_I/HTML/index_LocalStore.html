@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul> Ingredients
+        <li>Sugar</li>
+        <li>Milk</li>
+        <li>Eggs</li>
+        <li>Flour</li>
+        <li>Baking Soda</li>
+    </ul>
+    <script>
+	var listItems = document.getElementsByTagName("li");
+	//var listItems = document.querySelectorAll('li');
+	for (var i = 0; i < listItems.length; i++) {
+		listItems[i].addEventListener("click", function(event) {
+			alert("du drueckest " + event.target.innerText);
+			});
+	}
+	
+	var instructors = ["me", "myself", "I"];
+	localStorage.setItem("instr", instructors);
+	//alert(localStorage.getItem("instr"));
+	//var instr_2 = JSON.parse(localStorage.getItem("instr"));
+	alert("I = : " + JSON.parse(localStorage.getItem("instr")));
+//	var ul = document.querySelector("ul");
+//
+//	// how many event listeners?
+//	ul.addEventListener("click", function(event){
+//    alert("You just clicked on " + event.target.innerText);
+//});
+//	for(var i=0; i<listItems.length; i++){
+//    listItems[i].addEventListener("click", function(event){
+//        alert("You just clicked on " + event.target.innerText);
+//    });
+//}
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button class="first_button" >Click me first!</button>
+    <button class="second_button" >Click me second!</button>
+    <button class="third_button">Click me third!</button>
+    
+<script>
+var buttons = document.getElementsByTagName("button");
+for(var i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener("click", function() {
+		alert("hast was gedrucklet !  ");
+	});
+}
+
+
+//for(var i=0; i<buttons.length; i++){
+//    buttons[i].addEventListener("click", function(){
+//        alert('You just clicked on a button!');
+//    });
+//}
+//var firstButton = document.querySelector(".first_button");
+//
+//function firstClick(){
+//	alert("you clicked the first button!");
+//}
+////var secondButton = document.querySelector('.second_button');
+////var secsec = secondButton;
+//var secondButton = document.getElementsByClassName("second_button").item(0);
+//	secondButton.onclick = function(){
+//		alert("ich bin der Zweite !!!  ");
+//	}
+////var secondButton = document.querySelector('.second_button');
+////secondButton.onclick = function(){
+////    alert("you clicked the second button!");
+////}
+//
+//var thirdButton = document.querySelector(".third_button");
+//	thirdButton.addEventListener("click", function() {
+//		alert("ich bin der Dritte im Verbunde");
+//	})
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+    <script>
+		var cont = document.querySelector("#container");
+		var cont2 = document.getElementById("container");
+		var secClasses = document.getElementsByClassName("second");
+		var thirdClasses = document.querySelector(".ol third");
+		//cont.setAttribute(innerText, "hello");
+		//cont.innerText = "Hello";
+		var foo = document.querySelector(".footer");
+		foo.classList.add("main");
+		foo.classList.remove("main");
+		var newLi = document.createElement("li");
+		//newLi.class = "third";
+		newLi.innerText = "four";
+		var list = document.querySelector("ul")
+		list.appendChild(newLi);
+	</script>
+    
+</body>
+</html>
