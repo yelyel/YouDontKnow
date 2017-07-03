@@ -22,3 +22,7 @@ const lines = [
 ];
 const [a, b, c] = lines[1];
 console.log("a : " + a);
+
+console.log(" ");
+console.log(2 % 2);
+console.log(3 % 2);
