@@ -11,17 +11,28 @@ var user = {
 }
 
 const element = (
+  <div>
   <h1>
     Hello,??? {formatName(user)}
   </h1>
+  </div>
 );
 
 function showGreeting(user) {
   if(user) {
-    return <h2> Hello!!, {formatName(user)} </h2>;
+    return (
+      <div>
+      <h2> Hello!!, {formatName(user)} </h2>
+      </div>
+    );
   }
-  return <h2> Hello Stranger </h2>;
+  return (
+    <div>
+    <h2> Hello Stranger </h2>
+    </div>
+  );
 }
+
 
 function showAll(user) {
   return (
@@ -29,9 +40,9 @@ function showAll(user) {
     showGreeting(user)
   );
 }
-
+// wieso wird element hier nicht auch gerendert ??
 ReactDOM.render(
-  showAll(user),
+  showAll(),
   //showGreeting(),
   //element,
   document.getElementById('root')
