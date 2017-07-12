@@ -17,13 +17,17 @@ const element = (
   </h1>
   </div>
 );
-const element_2 =   "Hello,??? " + formatName(user);
+class Element2 {
+  render() {
+    return "Hello,???" + formatName(user);
+  }
+}
 
 function showGreeting(user) {
   if(user) {
     return (
       <div>
-      element_2
+      <Element2 />
       <h2> Hello!!, {formatName(user)} </h2>
       </div>
     );
