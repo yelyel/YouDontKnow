@@ -24,20 +24,36 @@ class Element2 extends React.Component {
   }
 }
 
+// function showGreeting(user) {
+//   if(user) {
+//     return (
+//       <div>
+//       <Element2 />
+//       <h2> Hello!!, {formatName(user)} </h2>
+//       </div>
+//     );
+//   }
+//   return (
+//     <div>
+//     <h2> Hello Stranger </h2>
+//     </div>
+//   );
+// }
+
 function showGreeting(user) {
-  if(user) {
-    return (
+  var withUser = (
+        <div>
+        <Element2 />
+        <h2> Hello!!, {formatName(user)} </h2>
+        </div>
+      );
+
+  var without = (
       <div>
-      <Element2 />
-      <h2> Hello!!, {formatName(user)} </h2>
+      <h2> Hello Stranger </h2>
       </div>
     );
-  }
-  return (
-    <div>
-    <h2> Hello Stranger </h2>
-    </div>
-  );
+  return (user ? withUser : without) ;
 }
 
 function tick() {
@@ -54,15 +70,19 @@ function showAll(user) {
     element
   );
 }
-// wieso wird element hier nicht auch gerendert ??
+
+// {element}
+// {element}
+
 ReactDOM.render(
   <div>
-    {showGreeting(user)}
-    {element}
-    {element}
+    {showGreeting()}
+
   </div>,
   document.getElementById('root')
 );
+
+
 
 
 // function tick() {
