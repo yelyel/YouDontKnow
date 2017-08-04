@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 
 // https://facebook.github.io/react/docs/state-and-lifecycle.html
-//https://facebook.github.io/react/docs/handling-events.html
 
 
 
@@ -71,31 +70,19 @@ class Clock extends React.Component {
       date: new Date()
     });
   }
-
-
-
   render() {
     return(
       <div>
-      <h1>Welcome to that bright morning</h1>
+      <h1>Welcome to this bright morning</h1>
       <h2> it si now {this.state.date.toLocaleTimeString()}</h2>
       </div>
     );
   }
 }
 
-function App() {
-  return (
-    <div>
-      <Clock />
-      <Clock />
-      <Clock />
-    </div>
-  );
-}
 
 
 ReactDOM.render(
-    <App />,
+    <Clock />,
     document.getElementById('root')
    );
