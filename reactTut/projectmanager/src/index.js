@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 
 // https://facebook.github.io/react/docs/state-and-lifecycle.html
-//https://facebook.github.io/react/docs/handling-events.html
+
 
 
 
@@ -53,47 +53,63 @@ import ReactDOM from 'react-dom';
 //   );
 
 
-class Clock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
-  }
+// class Clock extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {date: new Date()};
+//   }
+//
+//   componentDidMount(){
+//     this.timerID = setInterval(
+//       () => this.tick(), 1000);
+//   }
+//   componentWillUnmount() {
+//     clearInterval(this.timerID)
+//   }
+//   tick() {
+//     this.setState({
+//       date: new Date()
+//     });
+//   }
+//
+//
+//
+//   render() {
+//     return(
+//       <div>
+//       <h1>Welcome to that bright morning</h1>
+//       <h2> it si now {this.state.date.toLocaleTimeString()}</h2>
+//       </div>
+//     );
+//   }
+// }
+//
+// function App() {
+//   return (
+//     <div>
+//       <Clock />
+//       <Clock />
+//       <Clock />
+//     </div>
+//   );
+// }
 
-  componentDidMount(){
-    this.timerId = setInterval(
-      () => this.tick(), 1000);
-  }
-  componentWillUnmount() {
+// ------------------------------------------------------------------------------
 
-  }
-  tick() {
-    this.setState({
-      date: new Date()
-    });
-  }
-
-
-
-  render() {
-    return(
-      <div>
-      <h1>Welcome to that bright morning</h1>
-      <h2> it si now {this.state.date.toLocaleTimeString()}</h2>
-      </div>
-    );
-  }
-}
+//https://facebook.github.io/react/docs/handling-events.html
 
 function App() {
+  function activateLasers() {
+    console.log("Ich wurde gedrückt");
+  }
   return (
     <div>
-      <Clock />
-      <Clock />
-      <Clock />
+      <button onClick={activateLasers}>
+        Activate Lasers
+      </button>
     </div>
   );
 }
-
 
 ReactDOM.render(
     <App />,
