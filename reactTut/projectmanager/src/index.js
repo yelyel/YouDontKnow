@@ -51,8 +51,8 @@ import ReactDOM from 'react-dom';
 //     <App />,
 //     document.getElementById('root')
 //   );
-
-
+//
+//
 // class Clock extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -98,20 +98,42 @@ import ReactDOM from 'react-dom';
 
 //https://facebook.github.io/react/docs/handling-events.html
 
-function App() {
-  function activateLasers() {
+class YelApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ""};
+  }
+
+  activateLasers() {
     console.log("Ich wurde gedrückt");
   }
+
+  onScreenText(newtext){
+    this.setState({text: newtext});
+    console.console.log(this.text);
+    return <h3> {this.text } </h3>;
+  }
+
+  componentDidMount(){
+      this.setState({text: "und jetzt ?"});
+  }
+
+
+  render() {
   return (
     <div>
-      <button onClick={activateLasers}>
+      <button onClick={this.activateLasers}>
         Activate Lasers
       </button>
-    </div>
-  );
+      <br />
+      <h3>{this.state.text} </h3>
+
+      </div>
+    );
+  }
 }
 
 ReactDOM.render(
-    <App />,
+    <YelApp />,
     document.getElementById('root')
    );
