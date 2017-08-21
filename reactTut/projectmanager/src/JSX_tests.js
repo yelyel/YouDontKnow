@@ -27,6 +27,18 @@ function shoutOut(){
 }
 yelyel.logHello(["yelyelPeter", "Yelyel"], 17);
 jane.logHello([shoutOut(), "Yel"]);
+
+
+function letTest () {
+  console.log(typeof bar);
+  var bar = 'buzz';
+
+  console.log("2. " + typeof bar);
+
+}
+
+letTest();
+
 // function square(x) {
 //   return x * x;
 // }
