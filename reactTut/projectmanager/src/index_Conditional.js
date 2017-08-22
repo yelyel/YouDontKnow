@@ -96,17 +96,30 @@ class Page extends React.Component {
   }
 
   handleToggleClick() {
-    this.setState((prevState) => {
+
+    this.setState(function(prevState) {
       return {showWarning: !prevState.showWarning};
     });
+
+    // this.setState((prevState) => {
+    //   return {showWarning: !prevState.showWarning};
+    // });
   }
-  
+
+  checkState(actual) {
+    if(actual) {
+      return 'Hide';
+    } else {
+      return 'SHOW';
+    }
+  }
+//  {this.state.showWarning ? 'Hide' : 'Show'} --> macht das gleiche wie checkState()
   render() {
     return (
       <div>
         <WarningBanner warn={this.state.showWarning} />
-        <button onClick={this.handleToggleClick}>
-          {this.state.showWarning ? 'Hide' : 'Show'}
+        <button onClick= {this.handleToggleClick} >
+          {this.checkState(this.state.showWarning)}
         </button>
       </div>
     );
