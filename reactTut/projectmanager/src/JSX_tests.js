@@ -39,6 +39,9 @@ function letTest () {
 
 letTest();
 
+const doubled = numbers.map((number) => number * 2);
+console.log(doubled);
+
 // function square(x) {
 //   return x * x;
 // }
