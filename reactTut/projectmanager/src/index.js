@@ -47,7 +47,7 @@ import ReactDOM from 'react-dom';
 class SelectForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: 'Bananas'};
+    this.state = {value: 'coconut'};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -56,11 +56,12 @@ class SelectForm extends React.Component {
 
   handleChange(event) {
     this.setState({value: event.target.value});
+    console.log(event.target.value);
   }
 
   handleSubmit(event) {
-    alert('Neues Gemüse eingegeben: ' + this.state.value);
     event.preventDefault();
+    alert('Neues Gemüse eingegeben: ' + this.state.value);
   }
 
   render() {
@@ -78,8 +79,8 @@ class SelectForm extends React.Component {
       //   </label>
       //   <input type = 'submit' value = 'SUBMIT' />
       // </form>
-      //<form onSubmit={this.handleSubmit}>
       <form onSubmit={this.handleSubmit}>
+      {/*<form onSubmit={this.handleSubmit}>*/}
         <label>
           Pick your favorite La Croix flavor:
           <select value={this.state.value} onChange={this.handleChange}>
@@ -90,13 +91,10 @@ class SelectForm extends React.Component {
           </select>
         </label>
         <input type="submit" value="Submit" />
-      </form>
+        </form>
     );
   }
 }
-
-
-
 
 ReactDOM.render(
   <SelectForm  />,
