@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'D:/projects/YouDontKnow/reactTut/projectmanager/src/fancy.css';
-
-
+import 'D:/projects/YouDontKnow/reactTut/projectmanager/src/split.css';
 
 //   ----------------------------------------------------------------------------
 
@@ -16,8 +15,6 @@ function FancyBorder(props) {
     </div>
   );
 }
-
-
 
 function WelcomeDialog() {
   const place = " in space !!";
@@ -33,7 +30,50 @@ function WelcomeDialog() {
   );
 }
 
+function Contacts(props) {
+  return (
+    <div className = 'Contacts' >
+     {props.pic}
+    </div>
+  );
+}
+
+function Chat() {
+  return <div className = 'Chat' />;
+}
+
+function ShowPic() {
+  return <img src = 'https://koenig-media.raywenderlich.com/uploads/2017/08/ReactNative_update-feature-3.png'
+      alt = 'halli-hallo' />
+}
+
+
+function SplitPane(props) {
+  return(
+    <div className  = 'SplitPane' >
+      <div className = 'SplitPane-left' >
+        {props.left}
+      </div>
+      <div className = 'SplitPane-right' >
+        {props.right}
+      </div>
+    </div>
+  );
+}
+
+function Panes() {
+  return (
+    <SplitPane
+      left = {<Contacts
+        pic = {<ShowPic />}
+      />}
+      right ={<Chat />}
+    />
+
+  );
+}
+
 ReactDOM.render(
-  <WelcomeDialog />,
+  <Panes  />,
   document.getElementById('root')
 );
